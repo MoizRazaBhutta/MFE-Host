@@ -57,3 +57,18 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## Notes for Creating a single spa host.
+
+1. Start with index.html and import the map and register mfes
+2. In html of root application (app.html) identify the dom nodes to mount/unmount the mfe.
+
+```md
+onclick="singleSpaNavigate(event)": A global helper provided by Single-SPA. When clicked, it intercepts the link click, prevents a full browser page refresh, updates the URL bar to /drivers, and triggers Single-SPA to check which app should mount.
+
+div id="single-spa-application:@hub/...": These HTML container <div> elements act as viewport targets. Single-SPA looks for these specific element IDs to inject and mount the DOM elements rendered by each child MFE
+```
+
+3. Then in shell app.ts file register MFE using the name, app (this is for lazy loading the app from localhost as in index.html), activeWhen is for mount and unmount functionality, customProps for shared data
+4. Start() boots up single psa and start listening to browser url changes

@@ -1,13 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>ShellHost</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fleet & Dispatch Command - Shell Host</title>
+
+  <!-- Global Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Import Map: Register MFE Bundle URLs -->
+   <!-- This is where you register the MFE bundles -->
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+        "@hub/mfe-driver": "http://localhost:4201/main.js",
+        "@hub/mfe-dispatch": "http://localhost:4202/main.js"
+      }
+    }
+  </script>
+
+  <!-- SystemJS Loaders -->
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.3/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.3/dist/extras/amd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.14.10/dist/zone.umd.js"></script>
 </head>
-<body>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
   <app-root></app-root>
 </body>
 </html>
