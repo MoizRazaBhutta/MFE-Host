@@ -1,7 +1,29 @@
-<nav class="flex gap-6 text-sm font-semibold">
-  <a href="/drivers" onclick="singleSpaNavigate(event)"> Drivers Directory (MFE 1) </a>
-</nav>
+<header class="bg-slate-900 border-b border-slate-800 p-4 sticky top-0 z-50 text-white">
+  <div class="flex items-center justify-between container mx-auto">
+    <h1 class="text-xl font-bold">Fleet Command Hub</h1>
+    <nav class="flex gap-6 text-sm font-semibold">
+      <a
+        href="/drivers"
+        onclick="singleSpaNavigate(event)"
+        class="hover:text-emerald-400 transition-colors"
+      >
+        Drivers Directory (MFE 1)
+      </a>
+      <a
+        href="/dispatch"
+        onclick="singleSpaNavigate(event)"
+        class="hover:text-indigo-400 transition-colors"
+      >
+        Dispatch Workspace (MFE 2)
+      </a>
+    </nav>
+  </div>
+</header>
 
 <main class="container mx-auto p-6">
+  <!-- MFE 1 Container Target -->
   <div id="single-spa-application:@hub/mfe-driver"></div>
+
+  <!-- MFE 2 Container Target -->
+  <div id="single-spa-application:@hub/mfe-dispatch"></div>
 </main>

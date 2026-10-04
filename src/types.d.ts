@@ -12,3 +12,8 @@ declare module 'http://localhost:4201/main.js' {
   const value: any;
   export default value;
 }
+
+declare module 'http://localhost:4202/main.js' {
+  const value: any;
+  export default value;
+}

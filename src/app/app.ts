@@ -25,6 +25,18 @@ export class App implements OnInit {
       // Dictate exactly which container in the Shell DOM receives the MFE:
     });
 
+    // 2. MFE Dispatch (Port 4202)
+    registerApplication({
+      name: '@hub/mfe-dispatch',
+      app: () =>
+        import(/* @vite-ignore */ 'http://localhost:4202/main.js').then((m) => m.default ?? m),
+      activeWhen: (location) => location.pathname.startsWith('/dispatch'),
+      // Pass shared session props down to MFE 2
+      customProps: {
+        session: this.sessionService.currentSession,
+      },
+    });
+
     start();
   }
 }
