@@ -20,7 +20,9 @@ export class App implements OnInit {
     registerApplication({
       name: '@hub/mfe-driver',
       app: () =>
-        import(/* @vite-ignore */ 'http://localhost:4201/main.js').then((m) => m.default ?? m),
+        import(/* @vite-ignore */ 'https://driver-mfe.vercel.app/main.js').then(
+          (m) => m.default ?? m,
+        ),
       activeWhen: (location) => location.pathname.startsWith('/drivers'),
       // Dictate exactly which container in the Shell DOM receives the MFE:
     });
@@ -29,7 +31,9 @@ export class App implements OnInit {
     registerApplication({
       name: '@hub/mfe-dispatch',
       app: () =>
-        import(/* @vite-ignore */ 'http://localhost:4202/main.js').then((m) => m.default ?? m),
+        import(/* @vite-ignore */ 'https://mfe-dispatch.vercel.app/main.js').then(
+          (m) => m.default ?? m,
+        ),
       activeWhen: (location) => location.pathname.startsWith('/dispatch'),
       // Pass shared session props down to MFE 2
       customProps: {

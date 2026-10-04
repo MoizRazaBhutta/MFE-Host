@@ -8,12 +8,12 @@ declare module '@hub/mfe-dispatch' {
   export default value;
 }
 
-declare module 'http://localhost:4201/main.js' {
+declare module 'https://driver-mfe.vercel.app/main.js' {
   const value: any;
   export default value;
 }
 
-declare module 'http://localhost:4202/main.js' {
+declare module 'https://mfe-dispatch.vercel.app/main.js' {
   const value: any;
   export default value;
 }
